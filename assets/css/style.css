@@ -1,6 +1,12 @@
-#logo{
-height: 50px;
-width: 50px;
+body{
+    align-content: center;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.logo{
+height: 40px;
+width: 40px;
 }
 
 .alpha{
@@ -11,8 +17,7 @@ width: 50px;
 }
 
 .alphabets-area{
-    width: 300px;
-    /*align-items: center;*/
+    padding: 10px 25% 10px 25% 
 }
 
 .btn-green{
@@ -37,4 +42,16 @@ width: 50px;
 
 .btn-purple{
     background-color: purple;
+}
+
+.quiz-type{
+    height: 60px;
+    width: 70px;
+    background-color: burlywood;
+    font-weight: bold;
+}
+
+#display-pic{
+    width: 7rem;
+    margin-top: 3%;    
 }
