@@ -30,7 +30,11 @@ function startNewQuiz(){
 }
 
 function displayNextImage(){
+    //clear spelling textbox before displaying new image
+    document.getElementById("spelling").value = "";
 
+    //display next picture
+    //...
 }
 
 function deleteLastChar(){
