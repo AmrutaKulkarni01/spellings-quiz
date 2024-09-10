@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for(let button of buttons){
         button.addEventListener("click", function() {
             if(this.id == "backspace"){
-                alert("you clicked backspace");
+                console.log("you clicked backspace");
                 deleteLastChar();
             }
             else if(this.id == "next"){
@@ -34,6 +34,11 @@ function displayNextImage(){
 }
 
 function deleteLastChar(){
-
+    let textBox = document.getElementById("spelling");
+    if(textBox.value != ""){
+        let strValue = textBox.value;
+        strValue = strValue.substr(0, strValue.length-1);
+        textBox.value = strValue;
+    }
 }
     
