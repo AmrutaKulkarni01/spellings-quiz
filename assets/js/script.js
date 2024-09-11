@@ -19,33 +19,36 @@ document.addEventListener("DOMContentLoaded", function() {
             else if(this.classList.contains("alpha")) {                
                 document.getElementById("spelling").value += this.textContent;             
             }
-            else if(this.className === "quiz-type") {
-
-                alert(`Lets start ${this.textContent} Quiz!`);     
-                //reset button of previous quiz type  
-                console.log("currentQuiz : " + currentQuiz);
-                if(currentQuiz !== null){
-                    var btncurrQuiz = document.getElementById(currentQuiz);
-                    btncurrQuiz.style.backgroundColor = "burlywood";
-                    btncurrQuiz.style.color = "black";
-                }
-                currentQuiz = this.textContent;
-                
-                console.log("new currentQuiz : " + currentQuiz);
+            else if(this.className === "quiz-type") {               
+                changeCurrentQuiz(this.textContent);
                 startNewQuiz();
             }
         })
     }    
 })
 
-function startNewQuiz(){
-    //const fruits = ["apple", "mango", "banana", "grapes", "strawberry" ];
+function changeCurrentQuiz(newQuiz){
+    //reset button of previous quiz type  
+    console.log("currentQuiz : " + currentQuiz);
+    if(currentQuiz !== null){
+        var btncurrQuiz = document.getElementById(currentQuiz);
+        if(btncurrQuiz !== null)
+        {
+            btncurrQuiz.style.backgroundColor = "burlywood";
+            btncurrQuiz.style.color = "black";
+        }
+    }
+    currentQuiz = newQuiz;
+    var btnQuiz =  document.getElementById(currentQuiz);
+    if(btnQuiz !== null){
+        btnQuiz.style.backgroundColor = "green";
+        btnQuiz.style.color = "white";    
+    }    
+}
 
+function startNewQuiz(){    
     // get currentQuiz and change color of the respective button
     console.log("Inside startNewQuiz : currentQuiz : "+currentQuiz);
-    var btnQuiz =  document.getElementById(currentQuiz);
-    btnQuiz.style.backgroundColor = "green";
-    btnQuiz.style.color = "white";
     let myArray;
     if( currentQuiz === "Fruits"){
         myArray = ["apple", "mango", "banana", "grapes", "strawberry" ];  
