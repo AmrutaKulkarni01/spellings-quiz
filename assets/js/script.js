@@ -1,6 +1,8 @@
 // Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them
 
+let currentQuiz = "Fruits";
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     
@@ -18,26 +20,43 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("spelling").value += this.textContent;             
             }
             else if(this.className === "quiz-type") {
-                alert(`Lets start ${this.textContent} Quiz!`);                
-                startNewQuiz(this.textContent);
+
+                alert(`Lets start ${this.textContent} Quiz!`);     
+                //reset button of previous quiz type  
+                console.log("currentQuiz : " + currentQuiz);
+                if(currentQuiz !== null){
+                    var btncurrQuiz = document.getElementById(currentQuiz);
+                    btncurrQuiz.style.backgroundColor = "burlywood";
+                    btncurrQuiz.style.color = "black";
+                }
+                currentQuiz = this.textContent;
+                
+                console.log("new currentQuiz : " + currentQuiz);
+                startNewQuiz();
             }
         })
     }    
 })
 
-function startNewQuiz(quizType){
+function startNewQuiz(){
     //const fruits = ["apple", "mango", "banana", "grapes", "strawberry" ];
+
+    // get currentQuiz and change color of the respective button
+    console.log("Inside startNewQuiz : currentQuiz : "+currentQuiz);
+    var btnQuiz =  document.getElementById(currentQuiz);
+    btnQuiz.style.backgroundColor = "green";
+    btnQuiz.style.color = "white";
     let myArray;
-    if( quizType === "Fruits"){
+    if( currentQuiz === "Fruits"){
         myArray = ["apple", "mango", "banana", "grapes", "strawberry" ];  
     }
-    else if(quizType === "Colors"){
+    else if(currentQuiz === "Colors"){
         myArray = []; // ["red", "yellow", "blue", "green", "orange" ];  
     }
-    else if(quizType === "Animals"){
+    else if(currentQuiz === "Animals"){
         myArray = []; // ["tiger", "lion", "fox", "camel", "bear" ];  
     }
-    else if(quizType === "Birds"){
+    else if(currentQuiz === "Birds"){
         myArray = []; // ["crow", "sparrow", "parrot", "peacock", "hen" ];  
     }
         
