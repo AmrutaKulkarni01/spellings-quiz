@@ -19,22 +19,44 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else if(this.className === "quiz-type") {
                 alert(`Lets start ${this.textContent} Quiz!`);                
-                startNewQuiz();
+                startNewQuiz(this.textContent);
             }
         })
     }    
 })
 
-function startNewQuiz(){
-
+function startNewQuiz(quizType){
+    //const fruits = ["apple", "mango", "banana", "grapes", "strawberry" ];
+    let myArray;
+    if( quizType === "Fruits"){
+        myArray = ["apple", "mango", "banana", "grapes", "strawberry" ];  
+    }
+    else if(quizType === "Colors"){
+        myArray = []; // ["red", "yellow", "blue", "green", "orange" ];  
+    }
+    else if(quizType === "Animals"){
+        myArray = []; // ["tiger", "lion", "fox", "camel", "bear" ];  
+    }
+    else if(quizType === "Birds"){
+        myArray = []; // ["crow", "sparrow", "parrot", "peacock", "hen" ];  
+    }
+        
+    // Get random number between 0 and max index of the array
+    if(myArray.length > 0){
+        let index = Math.floor(Math.random() * myArray.length);
+        displayNextImage(myArray[index]);
+    }
 }
 
-function displayNextImage(){
+function displayNextImage(name){
     //clear spelling textbox before displaying new image
     document.getElementById("spelling").value = "";
 
     //display next picture
-    //...
+    console.log(name);
+    let imgElement = document.getElementById("display-pic");
+    let imgPath = "assets/images/" + name + ".png";
+    imgElement.setAttribute("src", imgPath);    
 }
 
 function deleteLastChar(){
@@ -45,4 +67,3 @@ function deleteLastChar(){
         textBox.value = strValue;
     }
 }
-    
