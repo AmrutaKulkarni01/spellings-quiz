@@ -8,69 +8,68 @@ document.addEventListener("DOMContentLoaded", function() {
     
     for(let button of buttons){
         button.addEventListener("click", function() {
-            if(this.id == "backspace"){
+            if (this.id == "backspace") {
                 console.log("you clicked backspace");
                 deleteLastChar();
             }
-            else if(this.id == "next"){
+            else if (this.id == "next") {
                 alert("you clicked next");
                 displayNextImage();
             }
-            else if(this.classList.contains("alpha")) {                
+            else if (this.classList.contains("alpha")) {                
                 document.getElementById("spelling").value += this.textContent;             
             }
-            else if(this.className === "quiz-type") {               
+            else if (this.className === "quiz-type") {               
                 changeCurrentQuiz(this.textContent);
                 startNewQuiz();
             }
-        })
+        }) 
     }    
 })
 
-function changeCurrentQuiz(newQuiz){
+function changeCurrentQuiz(newQuiz) {
     //reset button of previous quiz type  
     console.log("currentQuiz : " + currentQuiz);
-    if(currentQuiz !== null){
+    if (currentQuiz !== null) {
         var btncurrQuiz = document.getElementById(currentQuiz);
-        if(btncurrQuiz !== null)
-        {
+        if (btncurrQuiz !== null) {
             btncurrQuiz.style.backgroundColor = "burlywood";
             btncurrQuiz.style.color = "black";
         }
     }
     currentQuiz = newQuiz;
     var btnQuiz =  document.getElementById(currentQuiz);
-    if(btnQuiz !== null){
+    if (btnQuiz !== null) {
         btnQuiz.style.backgroundColor = "green";
         btnQuiz.style.color = "white";    
     }    
 }
 
-function startNewQuiz(){    
+function startNewQuiz() {    
     // get currentQuiz and change color of the respective button
     console.log("Inside startNewQuiz : currentQuiz : "+currentQuiz);
     let myArray;
-    if( currentQuiz === "Fruits"){
+    if ( currentQuiz === "Fruits") {
         myArray = ["apple", "mango", "banana", "grapes", "strawberry" ];  
     }
-    else if(currentQuiz === "Colors"){
+    else if (currentQuiz === "Colors") {
         myArray = []; // ["red", "yellow", "blue", "green", "orange" ];  
     }
-    else if(currentQuiz === "Animals"){
+    else if (currentQuiz === "Animals") {
         myArray = []; // ["tiger", "lion", "fox", "camel", "bear" ];  
     }
-    else if(currentQuiz === "Birds"){
+    else if (currentQuiz === "Birds") {
         myArray = []; // ["crow", "sparrow", "parrot", "peacock", "hen" ];  
     }
         
     // Get random number between 0 and max index of the array
-    if(myArray.length > 0){
+    if (myArray.length > 0) {
         let index = Math.floor(Math.random() * myArray.length);
         displayNextImage(myArray[index]);
     }
 }
 
-function displayNextImage(name){
+function displayNextImage(name) {
     //clear spelling textbox before displaying new image
     document.getElementById("spelling").value = "";
 
@@ -81,9 +80,9 @@ function displayNextImage(name){
     imgElement.setAttribute("src", imgPath);    
 }
 
-function deleteLastChar(){
+function deleteLastChar() {
     let textBox = document.getElementById("spelling");
-    if(textBox.value != ""){
+    if (textBox.value != "") {
         let strValue = textBox.value;
         strValue = strValue.substr(0, strValue.length-1);
         textBox.value = strValue;
