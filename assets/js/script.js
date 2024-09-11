@@ -2,6 +2,8 @@
 //Get the button elements and add event listeners to them
 
 let currentQuiz = "Fruits";
+let myArray;
+let index = -1;
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -15,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
             else if (this.id == "next") {
                 alert("you clicked next");
                 displayNextImage();
+            }
+            else if(this.id == "submit") {
+                checkSpelling();
             }
             else if (this.classList.contains("alpha")) {                
                 document.getElementById("spelling").value += this.textContent;             
@@ -48,7 +53,7 @@ function changeCurrentQuiz(newQuiz) {
 function startNewQuiz() {    
     // get currentQuiz and change color of the respective button
     console.log("Inside startNewQuiz : currentQuiz : "+currentQuiz);
-    let myArray;
+    //let myArray;
     if ( currentQuiz === "Fruits") {
         myArray = ["apple", "mango", "banana", "grapes", "strawberry" ];  
     }
@@ -64,7 +69,7 @@ function startNewQuiz() {
         
     // Get random number between 0 and max index of the array
     if (myArray.length > 0) {
-        let index = Math.floor(Math.random() * myArray.length);
+        index = Math.floor(Math.random() * myArray.length);
         displayNextImage(myArray[index]);
     }
 }
@@ -87,4 +92,29 @@ function deleteLastChar() {
         strValue = strValue.substr(0, strValue.length-1);
         textBox.value = strValue;
     }
+}
+
+function checkSpelling() {
+    let textBox = document.getElementById("spelling")
+    if (textBox.value != "") {
+        let strValue = textBox.value.toLowerCase();
+        alert("You entered "+ strValue);
+        alert("correct is "+ myArray[index]);
+        if (strValue === myArray[index]) {
+            alert("You entered "+ strValue+ "\nIt's correct");
+            incrementScore();
+        }
+        else {
+            alert("You entered "+ strValue+ "\nIt's wrong");
+            incrementIncorrectScore();
+        }
+    }
+}
+
+function incrementScore() {
+
+}
+
+function incrementIncorrectScore() {
+
 }
