@@ -71,7 +71,7 @@ function startNewQuiz() {
         myArray = ["tiger", "lion", "fox", "giraffe", "turtle", "monkey", "zebra" ];  
     }
     else if (currentQuiz === "Birds") {
-        myArray = []; // ["crow", "sparrow", "parrot", "peacock", "hen" ];  
+        myArray = ["crow", "sparrow", "parrot", "peacock", "hen" ];  
     }
         
     // Get random number between 0 and max index of the array
