@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else if (this.id == "next") {
                 alert("you clicked next");
-                displayNextImage();
+                // Get random number between 0 and max index of the array
+                if (myArray.length > 0) {
+                    index = Math.floor(Math.random() * myArray.length);
+                    displayNextImage(myArray[index]);
+                }                
             }
             else if(this.id == "submit") {
                 checkSpelling();
@@ -79,7 +83,7 @@ function displayNextImage(name) {
     document.getElementById("spelling").value = "";
 
     //display next picture
-    console.log(name);
+    console.log("Inside displayNextImage : "+name);
     let imgElement = document.getElementById("display-pic");
     let imgPath = "assets/images/" + name + ".png";
     imgElement.setAttribute("src", imgPath);    
@@ -98,17 +102,31 @@ function checkSpelling() {
     let textBox = document.getElementById("spelling")
     if (textBox.value != "") {
         let strValue = textBox.value.toLowerCase();
-        alert("You entered "+ strValue);
-        alert("correct is "+ myArray[index]);
         if (strValue === myArray[index]) {
             alert("You entered "+ strValue+ "\nIt's correct");
             incrementScore();
         }
         else {
             alert("You entered "+ strValue+ "\nIt's wrong");
+            alert("correct is "+ myArray[index]);
+     
             incrementIncorrectScore();
         }
     }
+
+    // Remove previous word from the array
+    myArray.splice(index, 1);
+    alert("myArray.length:" + myArray.length);
+    // Get random number between 0 and max index of the array and display next image
+    if (myArray.length > 0) {
+        index = Math.floor(Math.random() * myArray.length);
+        displayNextImage(myArray[index]);
+    }
+    else {
+        alert(`Final Score : ${""}\nPlease select new Quiz!`);
+    }
+
+    
 }
 
 function incrementScore() {
