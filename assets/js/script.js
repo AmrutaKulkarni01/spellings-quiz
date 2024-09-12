@@ -68,7 +68,7 @@ function startNewQuiz() {
         myArray = []; // ["red", "yellow", "blue", "green", "orange" ];  
     }
     else if (currentQuiz === "Animals") {
-        myArray = []; // ["tiger", "lion", "fox", "camel", "bear" ];  
+        myArray = ["tiger", "lion", "fox", "giraffe", "turtle", "monkey", "zebra" ];  
     }
     else if (currentQuiz === "Birds") {
         myArray = []; // ["crow", "sparrow", "parrot", "peacock", "hen" ];  
@@ -111,8 +111,7 @@ function checkSpelling() {
         }
         else {
             alert("You entered "+ strValue+ "\nIt's wrong");
-            alert("correct is "+ myArray[index]);
-     
+            alert("correct is "+ myArray[index]);     
             incrementIncorrectScore();
         }
     }
