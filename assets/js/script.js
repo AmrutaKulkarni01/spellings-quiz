@@ -55,6 +55,9 @@ function changeCurrentQuiz(newQuiz) {
 }
 
 function startNewQuiz() {    
+    //clear score cards
+    document.getElementById("correct").textContent = 0;
+    document.getElementById("incorrect").textContent = 0;
     // get currentQuiz and change color of the respective button
     console.log("Inside startNewQuiz : currentQuiz : "+currentQuiz);
     //let myArray;
@@ -123,16 +126,21 @@ function checkSpelling() {
         displayNextImage(myArray[index]);
     }
     else {
-        alert(`Final Score : ${""}\nPlease select new Quiz!`);
+        let score = parseInt(document.getElementById("correct").textContent);
+        alert(`Final Score : ${score}\nPlease select new Quiz!`);
     }
 
     
 }
 
 function incrementScore() {
-
+    let elementScore = document.getElementById("correct");  
+    let score = parseInt(elementScore.textContent);
+    elementScore.textContent = ++score;
 }
 
 function incrementIncorrectScore() {
-
+    let elementIncorrectScore = document.getElementById("incorrect");    
+    let score = parseInt(elementIncorrectScore.textContent);
+    elementIncorrectScore.textContent = ++score;
 }
