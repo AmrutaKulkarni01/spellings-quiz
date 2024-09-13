@@ -1,7 +1,7 @@
 // Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them
 
-let currentQuiz = "Fruits";
+let currentQuiz = "";
 let myArray;
 let index = -1;
 
@@ -15,18 +15,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 deleteLastChar();
             }
             else if (this.id == "next") {
-                alert("you clicked next");
-                // Get random number between 0 and max index of the array
-                if (myArray.length > 0) {
-                    index = Math.floor(Math.random() * myArray.length);
-                    displayNextImage(myArray[index]);
+                //check for emptiness of array
+                if(typeof myArray === 'undefined' || myArray.length < 1) {
+                    alert("Please select a new Quiz!");
                 }                
+                else {
+                    // Get random number between 0 and max index of the array                
+                    index = Math.floor(Math.random() * myArray.length);
+                    displayNextImage(myArray[index]);                
+                }
             }
             else if(this.id == "submit") {
-                checkSpelling();
+                console.log(myArray);
+                //check for emptiness of array
+                if(typeof myArray === 'undefined' || myArray.length < 1) {
+                    alert("Please select a new Quiz!");
+                }
+                else{
+                    checkSpelling();                    
+                }                                
             }
             else if (this.classList.contains("alpha")) {                
-                document.getElementById("spelling").value += this.textContent;             
+                if(currentQuiz === ""){
+                    alert("Please select a new Quiz!");
+                }
+                else{
+                    document.getElementById("spelling").value += this.textContent;             
+                }
             }
             else if (this.className === "quiz-type") {               
                 changeCurrentQuiz(this.textContent);
@@ -46,7 +61,11 @@ function changeCurrentQuiz(newQuiz) {
             btncurrQuiz.style.color = "black";
         }
     }
+    
     currentQuiz = newQuiz;
+    if(newQuiz == "")
+        return;
+    //change color of new quiz button
     var btnQuiz =  document.getElementById(currentQuiz);
     if (btnQuiz !== null) {
         btnQuiz.style.backgroundColor = "green";
@@ -105,13 +124,10 @@ function checkSpelling() {
     let textBox = document.getElementById("spelling")
     if (textBox.value != "") {
         let strValue = textBox.value.toLowerCase();
-        if (strValue === myArray[index]) {
-            alert("You entered "+ strValue+ "\nIt's correct");
+        if (strValue === myArray[index]) {            
             incrementScore();
         }
-        else {
-            alert("You entered "+ strValue+ "\nIt's wrong");
-            alert("correct is "+ myArray[index]);     
+        else {            
             incrementIncorrectScore();
         }
     }
@@ -126,7 +142,9 @@ function checkSpelling() {
     }
     else {
         let score = parseInt(document.getElementById("correct").textContent);
-        alert(`Final Score : ${score}\nPlease select new Quiz!`);
+        //deselect current quiz
+        changeCurrentQuiz("");
+        alert(`Final Score : ${score}\nPlease select a new Quiz!`);
     }
 
     
