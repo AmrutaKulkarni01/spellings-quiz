@@ -1,77 +1,77 @@
-body{
+body {
     align-content: center;
     text-align: center;
     background-color: aquamarine;
 }
 
-.logo{
-height: 40px;
-width: 40px;
+.logo {
+    height: 40px;
+    width: 40px;
 }
 
-.alpha{
+.alpha {
     width: 50px;
     height: 50px;
     margin-bottom: 2px;
-    font-weight: bold ;
+    font-weight: bold;
 }
 
-.alphabets-area{
-    padding: 5px 2% 5px 2% 
+.alphabets-area {
+    padding: 5px 2% 5px 2%
 }
 
-.btn-green{
+.btn-green {
     background-color: green;
 }
 
-.btn-red{
+.btn-red {
     background-color: red;
 }
 
-.btn-blue{
+.btn-blue {
     background-color: blue;
 }
 
-.btn-orange{
+.btn-orange {
     background-color: orange;
 }
 
-.btn-yellow{
+.btn-yellow {
     background-color: yellow;
 }
 
-.btn-purple{
+.btn-purple {
     background-color: purple;
 }
 
-.quiz-type{
+.quiz-type {
     height: 60px;
     width: 70px;
     background-color: burlywood;
     font-weight: bold;
 }
 
-#display-pic{
+#display-pic {
     width: 7rem;
-    margin-top: 3%;    
+    margin-top: 3%;
 }
 
-#backspace{
+#backspace {
     width: 45px;
 }
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
-    .alphabets-area{
-        padding: 10px 15% 10px 15% 
+    .alphabets-area {
+        padding: 10px 15% 10px 15%
     }
 }
 
 /* Media query: laptops and desktops (992px and up) */
 @media screen and (min-width: 992px) {
 
-  .alphabets-area{
-      padding: 10px 25% 10px 25% 
-  }
+    .alphabets-area {
+        padding: 10px 25% 10px 25%
+    }
 }
