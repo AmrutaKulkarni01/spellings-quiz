@@ -1,9 +1,9 @@
-let currentQuiz = ""; //this will hold name of the currently selected quiz 
-let myArray; //this will hold names of the pictures in the current quiz-type       
-let index = -1; //index of the picture being currently displayed
+let currentQuiz = ""; // This will hold name of the currently selected quiz 
+let myArray; // This will hold names of the pictures in the current quiz-type       
+let index = -1; // Index of the picture being currently displayed
 
 // Wait for the DOM to finish loading before running the game
-//Get the button elements and add event listeners to them
+// Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("you clicked backspace");
                 deleteLastChar();
             } else if (this.id == "next") {
-                //check for emptiness of array
+                // Check for emptiness of array
                 if (typeof myArray === 'undefined' || myArray.length < 1) {
                     alert("Please select a new Quiz!");
                 } else {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } else if (this.id == "submit") {
                 console.log(myArray);
-                //check for emptiness of array
+                // Check for emptiness of array
                 if (typeof myArray === 'undefined' || myArray.length < 1) {
                     alert("Please select a new Quiz!");
                 } else {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * and change styling of the new quiz button 
  */
 function changeCurrentQuiz(newQuiz) {
-    //reset button of previous quiz type  
+    // Reset button of previous quiz type  
     console.log("currentQuiz : " + currentQuiz);
     if (currentQuiz !== null) {
         var btncurrQuiz = document.getElementById(currentQuiz);
@@ -61,7 +61,7 @@ function changeCurrentQuiz(newQuiz) {
     currentQuiz = newQuiz;
     if (newQuiz == "")
         return;
-    //change color of new quiz button
+    // Change color of new quiz button
     var btnQuiz = document.getElementById(currentQuiz);
     if (btnQuiz !== null) {
         btnQuiz.style.backgroundColor = "green";
@@ -74,12 +74,11 @@ function changeCurrentQuiz(newQuiz) {
  * with an intention of starting a new quiz.
  */
 function startNewQuiz() {
-    //clear score cards
+    // Clear score cards
     document.getElementById("correct").textContent = 0;
     document.getElementById("incorrect").textContent = 0;
-    // get currentQuiz and change color of the respective button
-    console.log("Inside startNewQuiz : currentQuiz : " + currentQuiz);
-    //let myArray;
+
+    // Get currentQuiz name and load respective array in myArray
     if (currentQuiz === "Fruits") {
         myArray = ["apple", "mango", "banana", "grapes", "strawberry"];
     } else if (currentQuiz === "Colors") {
@@ -90,7 +89,8 @@ function startNewQuiz() {
         myArray = ["crow", "sparrow", "parrot", "peacock", "hen"];
     }
 
-    // Get random number between 0 and max index of the array
+    // Get random number between 0 and max index of the array#
+    // and call display image function
     if (myArray.length > 0) {
         index = Math.floor(Math.random() * myArray.length);
         displayNextImage(myArray[index]);
@@ -102,10 +102,10 @@ function startNewQuiz() {
  * in the images folder and display the same as a next question
  */
 function displayNextImage(name) {
-    //clear spelling textbox before displaying new image
+    // Clear spelling textbox before displaying new image
     document.getElementById("spelling").value = "";
 
-    //display next picture
+    // Display next picture
     console.log("Inside displayNextImage : " + name);
     let imgElement = document.getElementById("display-pic");
     let imgPath = "assets/images/" + name + ".png";
@@ -141,14 +141,13 @@ function checkSpelling() {
 
     // Remove previous word from the array
     myArray.splice(index, 1);
-    alert("myArray.length:" + myArray.length);
     // Get random number between 0 and max index of the array and display next image
     if (myArray.length > 0) {
         index = Math.floor(Math.random() * myArray.length);
         displayNextImage(myArray[index]);
     } else {
         let score = parseInt(document.getElementById("correct").textContent);
-        //deselect current quiz
+        // Deselect current quiz
         changeCurrentQuiz("");
         alert(`Final Score : ${score}\nPlease select a new Quiz!`);
     }
