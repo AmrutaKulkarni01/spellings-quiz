@@ -1,14 +1,13 @@
+let currentQuiz = "";  //this will hold name of the currently selected quiz 
+let myArray; //this will hold names of the pictures in the current quiz-type       
+let index = -1; //index of the picture being currently displayed
+
 // Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them
-
-let currentQuiz = "";
-let myArray;
-let index = -1;
-
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     
-    for(let button of buttons){
+    for (let button of buttons){
         button.addEventListener("click", function() {
             if (this.id == "backspace") {
                 console.log("you clicked backspace");
@@ -51,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }    
 })
 
+/**
+ * This function will reset old quiz button to its original styling(color etc)
+ * and change styling of the new quiz button 
+ */
 function changeCurrentQuiz(newQuiz) {
     //reset button of previous quiz type  
     console.log("currentQuiz : " + currentQuiz);
@@ -73,6 +76,10 @@ function changeCurrentQuiz(newQuiz) {
     }    
 }
 
+/**
+ * This function is called when user clicks any of the 4 quiz-type buttons,
+ * with an intention of starting a new quiz.
+ */
 function startNewQuiz() {    
     //clear score cards
     document.getElementById("correct").textContent = 0;
@@ -100,6 +107,10 @@ function startNewQuiz() {
     }
 }
 
+/**
+ * This function will search for a picture (with a name provided as its parameter)
+ * in the images folder and display the same as a next question
+ */
 function displayNextImage(name) {
     //clear spelling textbox before displaying new image
     document.getElementById("spelling").value = "";
@@ -111,6 +122,10 @@ function displayNextImage(name) {
     imgElement.setAttribute("src", imgPath);    
 }
 
+/**
+ * This function will be called when a "backspace" button is clicked.
+ * It will delete the last character in the "spelling" textbox.
+ */
 function deleteLastChar() {
     let textBox = document.getElementById("spelling");
     if (textBox.value != "") {
@@ -120,6 +135,9 @@ function deleteLastChar() {
     }
 }
 
+/**
+ * This function will check correctness of the spelling entered by the user
+ */
 function checkSpelling() {
     let textBox = document.getElementById("spelling")
     if (textBox.value != "") {
@@ -150,12 +168,18 @@ function checkSpelling() {
     
 }
 
+/**
+ * This function will increment and display the correct score
+ */
 function incrementScore() {
     let elementScore = document.getElementById("correct");  
     let score = parseInt(elementScore.textContent);
     elementScore.textContent = ++score;
 }
 
+/**
+ * This function will increment and display the incorrect score
+ */
 function incrementIncorrectScore() {
     let elementIncorrectScore = document.getElementById("incorrect");    
     let score = parseInt(elementIncorrectScore.textContent);
