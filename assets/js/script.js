@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let button of buttons) {
         button.addEventListener("click", function () {
             if (this.id == "backspace") {
-                console.log("you clicked backspace");
                 deleteLastChar();
             } else if (this.id == "next") {
                 // Check for emptiness of array
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     displayNextImage(myArray[index]);
                 }
             } else if (this.id == "submit") {
-                console.log(myArray);
                 // Check for emptiness of array
                 if (typeof myArray === 'undefined' || myArray.length < 1) {
                     alert("Please select a new Quiz!");
@@ -48,8 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
  * and change styling of the new quiz button 
  */
 function changeCurrentQuiz(newQuiz) {
-    // Reset button of previous quiz type  
-    console.log("currentQuiz : " + currentQuiz);
+    //remove background color of question-area if set
+    document.getElementById("question-area").style.backgroundColor = "transparent";
+
+    // Reset button of previous quiz type      
     if (currentQuiz !== null) {
         var btncurrQuiz = document.getElementById(currentQuiz);
         if (btncurrQuiz !== null) {
@@ -82,7 +82,7 @@ function startNewQuiz() {
     if (currentQuiz === "Fruits") {
         myArray = ["apple", "mango", "banana", "grapes", "strawberry"];
     } else if (currentQuiz === "Colors") {
-        myArray = []; // ["red", "yellow", "blue", "green", "orange" ];  
+        myArray = ["red", "yellow", "blue", "green", "orange", "purple", "black", "white", "gray", "pink"];
     } else if (currentQuiz === "Animals") {
         myArray = ["tiger", "lion", "fox", "giraffe", "turtle", "monkey", "zebra"];
     } else if (currentQuiz === "Birds") {
@@ -105,9 +105,17 @@ function displayNextImage(name) {
     // Clear spelling textbox before displaying new image
     document.getElementById("spelling").value = "";
 
-    // Display next picture
-    console.log("Inside displayNextImage : " + name);
     let imgElement = document.getElementById("display-pic");
+    // Display next color if color quiz is selected
+    if (currentQuiz === "Colors") {
+        let colorDiv = document.getElementById("question-area");
+        colorDiv.style.backgroundColor = name;
+        imgElement.setAttribute("src", "");
+        imgElement.setAttribute("alt", "");
+        return;
+    }
+
+    // Display next picture
     let imgPath = "assets/images/" + name + ".png";
     imgElement.setAttribute("src", imgPath);
 }

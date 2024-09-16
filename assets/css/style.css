@@ -51,9 +51,15 @@ body {
     font-weight: bold;
 }
 
+#question-area {
+    width: 7rem;
+    height: 7rem;
+    margin: auto;
+    margin-top: 3%;
+}
+
 #display-pic {
     width: 7rem;
-    margin-top: 3%;
 }
 
 #backspace {
