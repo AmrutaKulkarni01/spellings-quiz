@@ -4,6 +4,12 @@ body {
     background-color: aquamarine;
 }
 
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* The Button to open Instructions Modal*/
 #btnInstruct {
     background-color: lightgoldenrodyellow;
