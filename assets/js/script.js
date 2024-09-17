@@ -1,6 +1,8 @@
 let currentQuiz = ""; // This will hold name of the currently selected quiz 
 let myArray; // This will hold names of the pictures in the current quiz-type       
 let index = -1; // Index of the picture being currently displayed
+let validationMessage = document.getElementById("validationMessage");
+let numberOfQuestions = 0;
 
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
@@ -38,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.id == "next") {
                 // Check for emptiness of array
                 if (typeof myArray === 'undefined' || myArray.length < 1) {
-                    alert("Please select a new Quiz!");
+                    validationMessage.innerHTML = "<i>Please select a new Quiz!</i>";
+                    validationMessage.style.color = "red";
                 } else {
                     // Get random number between 0 and max index of the array                
                     index = Math.floor(Math.random() * myArray.length);
@@ -47,13 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.id == "submit") {
                 // Check for emptiness of array
                 if (typeof myArray === 'undefined' || myArray.length < 1) {
-                    alert("Please select a new Quiz!");
+                    validationMessage.innerHTML = "<i>Please select a new Quiz!</i>";
+                    validationMessage.style.color = "red";
                 } else {
                     checkSpelling();
                 }
             } else if (this.classList.contains("alpha")) {
                 if (currentQuiz === "") {
-                    alert("Please select a new Quiz!");
+                    validationMessage.innerHTML = "<i>Please select a new Quiz!</i>";
+                    validationMessage.style.color = "red";
                 } else {
                     document.getElementById("spelling").value += this.textContent;
                 }
@@ -92,6 +97,7 @@ function changeCurrentQuiz(newQuiz) {
         return;
     }
 
+    validationMessage.innerHTML = "";
     //set alt attribute of displayed image    
     document.getElementById("display-pic").setAttribute("alt", "display-pic");
     document.getElementById("msg").textContent = "";
@@ -111,6 +117,7 @@ function startNewQuiz() {
     // Clear score cards
     document.getElementById("correct").textContent = 0;
     document.getElementById("incorrect").textContent = 0;
+    validationMessage.innerHTML = "";
 
     // Get currentQuiz name and load respective array in myArray
     if (currentQuiz === "Fruits") {
@@ -123,10 +130,12 @@ function startNewQuiz() {
         myArray = ["crow", "sparrow", "parrot", "peacock", "hen"];
     }
 
+    numberOfQuestions = myArray.length;
+
     // Get random number between 0 and max index of the array#
     // and call display image function
-    if (myArray.length > 0) {
-        index = Math.floor(Math.random() * myArray.length);
+    if (numberOfQuestions) {
+        index = Math.floor(Math.random() * numberOfQuestions);
         displayNextImage(myArray[index]);
     }
 }
@@ -191,7 +200,19 @@ function checkSpelling() {
         let score = parseInt(document.getElementById("correct").textContent);
         // Deselect current quiz
         changeCurrentQuiz("");
-        alert(`Final Score : ${score}\nPlease select a new Quiz!`);
+        let message = "";
+        let fraction = score / numberOfQuestions;
+        if (fraction > 0.8) {
+            message = "Wow, that's astronomically fantastic!"
+        } else if (fraction > 0.5) {
+            message = "OK, a reasonably good score but I know you can do better. :)"
+        } else if (fraction > 0.2) {
+            message = "Hmm, some improvement is needed."
+        } else {
+            message = "Have you done your homework?"
+        }
+        validationMessage.style.color = "black";
+        validationMessage.innerHTML = `<h3>Final Score: ${score}, ${message}</h3>`;
     }
 }
 
