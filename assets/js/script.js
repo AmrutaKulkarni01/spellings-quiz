@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function changeCurrentQuiz(newQuiz) {
     //remove background color of question-area if set
     document.getElementById("question-area").style.backgroundColor = "transparent";
+    //remove displayed image
+    document.getElementById("display-pic").setAttribute("src", "");
 
     // Reset button of previous quiz type      
     if (currentQuiz !== null) {
@@ -59,8 +61,16 @@ function changeCurrentQuiz(newQuiz) {
     }
 
     currentQuiz = newQuiz;
-    if (newQuiz == "")
+    if (newQuiz == "") {
+        //remove alt attribute until any image is displayed
+        document.getElementById("display-pic").setAttribute("alt", "");
+        document.getElementById("msg").textContent = "Please select a new quiz!";
         return;
+    }
+
+    //set alt attribute of displayed image    
+    document.getElementById("display-pic").setAttribute("alt", "display-pic");
+    document.getElementById("msg").textContent = "";
     // Change color of new quiz button
     var btnQuiz = document.getElementById(currentQuiz);
     if (btnQuiz !== null) {

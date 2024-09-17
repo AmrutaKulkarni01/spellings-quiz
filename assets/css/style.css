@@ -58,12 +58,24 @@ body {
     margin-top: 3%;
 }
 
+#msg {
+    font-size: 30px;
+    font-weight: 900;
+    color: blue;
+}
+
 #display-pic {
     width: 7rem;
 }
 
 #backspace {
     width: 45px;
+}
+
+.score-area {
+    font-size: 20px;
+    font-weight: 100;
+    color: darkgreen;
 }
 
 /* Media query: tablets and larger (768px and up) */
