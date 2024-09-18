@@ -146,8 +146,40 @@ body {
     width: 7rem;
 }
 
+#backspace, #submit, #next {
+    height: 30px;
+    width: 83px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    background: rgba(255, 255, 255, 0.2);
+    background-color: lightgoldenrodyellow;
+    color: #0E0F19;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;    
+}
+
+#backspace:hover, #submit:hover, #next:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+
 #backspace {
-    width: 45px;
+    width: 50px;
+}
+
+#spelling {
+    height: 30px;
+    width: 120px;
+    color: blue;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: lightgoldenrodyellow;
+    border: none;
 }
 
 .score-area {
