@@ -98,28 +98,28 @@ body {
     padding: 5px 2% 5px 2%
 }
 
-.btn-green {
-    background-color: green;
-}
-
-.btn-red {
-    background-color: red;
-}
-
 .btn-blue {
-    background-color: blue;
+    background-color: lightskyblue;
 }
 
-.btn-orange {
-    background-color: orange;
+.btn-pink {
+    background-color: pink;
+}
+
+.btn-gray {
+    background-color: gray;
+}
+
+.btn-orchid {
+    background-color: orchid;
 }
 
 .btn-yellow {
     background-color: yellow;
 }
 
-.btn-purple {
-    background-color: purple;
+.btn-lightseagreen {
+    background-color: lightseagreen;
 }
 
 .quiz-type {
