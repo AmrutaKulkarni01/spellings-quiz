@@ -13,7 +13,24 @@ body {
 /* The Button to open Instructions Modal*/
 #btnInstruct {
     background-color: lightgoldenrodyellow;
-    float: right;
+    background: rgba(255, 255, 255, 0.2);
+    color: #0E0F19;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 10px;
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#btnInstruct:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .logo {
