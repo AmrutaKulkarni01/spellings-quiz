@@ -136,7 +136,7 @@ body {
 }
 
 .quiz-type:hover {
-    background-color: green;
+    background-color: green !important;
 }
 
 #question-area {
@@ -197,8 +197,9 @@ body {
 }
 
 .score-area {
+    margin-top: -10px;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: bold;
     color: darkgreen;
 }
 
@@ -206,6 +207,7 @@ body {
     color: red;
     font-size: 20px;
     padding: 10px;
+    padding-bottom: 0%;
 }
 
 /* Media query: tablets and larger (768px and up) */
