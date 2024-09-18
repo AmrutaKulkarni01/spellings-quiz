@@ -177,3 +177,15 @@ body {
         padding: 10px 25% 10px 25%
     }
 }
+
+/* Media query: mobiles (smaller than 400px x 800px) */
+@media screen and (max-height: 800px)
+              and (max-width: 400px) {
+
+    /* The Modal (background) */
+    .modal {
+    /* Sit on top */
+    padding-top: 10px;
+    }
+}
+
