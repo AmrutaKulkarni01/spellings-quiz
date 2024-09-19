@@ -143,6 +143,18 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 -   Open the IDE of your choice and and paste the copied git url into the IDE terminal
 -   The project is now created as a local clone
 
+## Credits
+-   A special heartfelt thanks to my Mentor, Spencer Barriball, for all the support he provided and for answering all my questions. With his help I could surely bring my project to the next level.
 
+### Content
+
+-   
+-
+
+### Media
+
+-  The 'abc-block' image used as 'Favicon' in the title of the page as well as 'logo' in the heading was taken from [flaticon] ("https://www.flaticon.com/free-icons/coexistence")
+-  The icon on the button 'Backspace' was taken from [Font-awesome](https://fontawesome.com/)
+-  All the images used in the Animals, Birds and Fruits quiz and also the smily icon were taken from [flaticon](https://www.flaticon.com/)
 
 
