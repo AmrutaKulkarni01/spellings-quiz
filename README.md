@@ -15,7 +15,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 ## Features
 -   Header
     -   Header at the top of the page, simply consists of a logo and a heading.
-    -   The 'abc' logo gives idea that its realted to alphabates.
+    -   The 'abc' logo gives idea that its realted to alphabets.
     -   The heading "Spellings Quiz" clearly states what this application is about.
 
         ![Image of the header with a heading and scorebord](/assets/images/header-spellings-quiz.png)
@@ -75,7 +75,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 
 ## Testing
 -   Accessibiliy
-    -   I ran the page through Lighthouse and discovered ....
+    -   I ran the page through Lighthouse and made sure that the performance, accessibility etc. are good.
 
     ![Image of Lighthouse testing score](/assets/images/lighthouse.png) 
 
@@ -93,13 +93,20 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
     ![Image of W3C CSS validator check](/assets/images/css_validator.png)
 
 -   JavaScript
-    -   I ran the code through [JS Hint](https://jshint.com/) and discovered 28 warnings of which 4 were missing semicolons. Fixed those and 24 warnings remains of which I can't do anything about as far as I know. No errors.
+    -   I ran the code through [JS Hint](https://jshint.com/) and discovered 28 warnings of which 4 were missing semicolons. Fixed those and 24 warnings remain of which I can't do anything about as far as I know. No errors.
 
     ![Image of JS Hint Metrics](/assets/images/js_validator.png)
 
 -   Feature Testing
-    -   I tested 
-
+    -   I tested that the 'Instructions' button is working, Once it is clicked 'Instruction Modal Box' is opening and close button on the modal box is working as well.
+    -   I tested that the 'On screen keyboard' is working fine. As expected clicking on the alphabet buttons results in typed alphbet shown in the textbox below.
+    -   I tested that only 'On screen keyboard' could be used for typing.
+    -   I tested that at any time quiz-type could be changed, by clicking on one of the 4 'quiz-type' buttons.
+    -   I tested that all the 4 quiz types are working correctly. This includes loading correct images randomly, spellings getting correctly verified and scores getting updated after each submit event.
+    -   I tested that the 'backspace', 'Submit' and 'Try Later' buttons are working correctly.
+    -   I tested that at the end of each quiz, final score and a message is displayed.
+    -   I tested that when a quiz is not yet selected, clicking on 'alphabet' buttons, 'Submit' button or 'Try Later' button has no effect and a warning is displayed saying 'Please select a quiz'
+    -   I tested that hovering effect is working on all the buttons.
 
 
 
