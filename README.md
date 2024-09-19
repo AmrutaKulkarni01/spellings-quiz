@@ -1,6 +1,6 @@
-# Spellings Quiz - A platform to check and practice your english spellings skills
+# Spellings Quiz - A platform to practice your english spellings skills
 
-The Spellings Quiz, is an application mainly created for younger kids, so that they can check and practice their english spellings skills in a very interesting way.
+The Spellings Quiz, is an application mainly created for younger kids, so that they can practice and improve their english spellings skills in a very interesting way.
 
 English is a world language. Most of the schools have this language as a first or second language. Sometimes kids find it easy to speak. But while writting they make lot of mistakes, due to their lagging spellings skills. 
 
@@ -62,10 +62,43 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
     -   Here the current score is displayed, which includes number of correct answers and number of incorrect answers.    
         ![Image of the score area](/assets/images/score-area.png)
 
+-   Final Score
+    -   At the end of the individual quiz final score will be displayed along with a message, commenting about the performance of a participant. Example is shown in the image below.
+    -   Different messages will motivate user to do better next time.
+        ![Image of the Final score message](/assets/images/final-score-msg.png)
+
+
 ### Features left to implement
 
 -   In the future I would like to add a timer for the quiz. User should answer each question within some fixed number of seconds.When the given time is over next question will appear automatocally.
 -   It would be also a nice idea to create login-id for the user. We can save the score for each profile. In this way we could track user's progress when he plays the quiz each time.
+
+## Testing
+-   Accessibiliy
+    -   I ran the page through Lighthouse and discovered ....
+
+    ![Image of Lighthouse testing score](/assets/images/lighthouse.png) 
+
+-   I tested and confirmed that the quiz works in different browsers; e.g. Chrome, Edge, Samsung Internet.
+
+-   HTML
+    -   I ran the code through the [W3C HTML validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Famrutakulkarni01.github.io%2Fspellings-quiz%2F). No errors or warnings.
+
+    ![Image of W3C HTML validator check](/assets/images/html_validator.png)
+
+-   CSS
+    -   I ran the code through the [W3C CSS Validator](
+        https://jigsaw.w3.org/css-validator/validator?uri=+https%3A%2F%2Famrutakulkarni01.github.io%2Fspellings-quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). I discovered 4 warnings as a result of keeping same color for background and border of 'Instruction' button. As a fix, I changed border color slightly.
+
+    ![Image of W3C CSS validator check](/assets/images/css_validator.png)
+
+-   JavaScript
+    -   I ran the code through [JS Hint](https://jshint.com/) and discovered 28 warnings of which 4 were missing semicolons. Fixed those and 24 warnings remains of which I can't do anything about as far as I know. No errors.
+
+    ![Image of JS Hint Metrics](/assets/images/js_validator.png)
+
+-   Feature Testing
+    -   I tested 
 
 
 
