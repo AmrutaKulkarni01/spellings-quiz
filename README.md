@@ -1,6 +1,6 @@
 # Spellings Quiz - A platform to practice your english spellings skills
 
-The Spellings Quiz, is an application mainly created for younger kids, so that they can practice and improve their english spellings skills in a very interesting way.
+The Spellings Quiz, is an application mainly created for younger kids, so that they can practice and develop their english spellings skills in a very interesting way.
 
 English is a world language. Most of the schools have this language as a first or second language. Sometimes kids find it easy to speak. But while writting they make lot of mistakes, due to their lagging spellings skills. 
 
@@ -148,8 +148,8 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 
 ### Content
 
--   
--
+-   My 8 year old daughter inspired me to create such a quiz app. She is fond of solving quizes. Hence I thought of creating a quiz application which will make kids learn something.
+-   I took idea of creating Modal Box and its styling from https://www.w3schools.com/
 
 ### Media
 
