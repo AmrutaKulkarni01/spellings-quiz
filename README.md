@@ -116,5 +116,33 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 ### Unfixed bugs
 -   There are no unfixed bugs
 
+## Deployment
+
+### Version Control
+
+-   The site was created using Gitpod editor and pushed to Github to the remote repository 'spellings-quiz'.
+-   Git commands were used throughout the development to push the code to the remote repository. The following git commands were used:
+    -   git add . - to add the files to the staging area before being committed.
+    -   git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step.
+    -   git push - to push all committed code to the remote repository on Github.
+
+### Deployment to Github pages
+
+-   The site was deployed to Github pages as follows:
+    -   In the Github repository, I navigated to Settings tab
+    -   From the source section drop-down menu, I selected the Master branch and Save
+    -   Once the Master branch was selected, the page provided the link to the website
+-   The live link: [spellings-quiz](https://amrutakulkarni01.github.io/spellings-quiz/)
+
+
+### Cloning of the Repository Code locally
+
+-   Go to the Github repository that you want to clone
+-   Click on the Code button located above all the project files
+-   Click on HTTPS and copy the repository link
+-   Open the IDE of your choice and and paste the copied git url into the IDE terminal
+-   The project is now created as a local clone
+
+
 
 
