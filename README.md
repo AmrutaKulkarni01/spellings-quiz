@@ -108,5 +108,13 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
     -   I tested that when a quiz is not yet selected, clicking on 'alphabet' buttons, 'Submit' button or 'Try Later' button has no effect and a warning is displayed saying 'Please select a quiz'
     -   I tested that hovering effect is working on all the buttons.
 
+## Bugs
+-   When I added hovering effect on 'Quiz-type' buttons, I came across a bug that once a 'Quiz-type' button is clicked, next time hovering effect was not seen on that particular button. I fixed this bug by adding '!important' rule.
+
+-   Another bug was found, where even if items in the array were deleted, its length was not being updated. So a quiz was not stopped even if array is empty. Exception was thrown when tried to access the element which was deleted. I fixed this by replacing delete with splice() method on the array.
+
+### Unfixed bugs
+-   There are no unfixed bugs
+
 
 
