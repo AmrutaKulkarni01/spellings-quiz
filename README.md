@@ -151,6 +151,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 ### Content
 
 -   My 8 year old daughter inspired me to create such a quiz app. She is fond of solving quizes. Hence I thought of creating a quiz application which will make kids learn something.
+-   While implementing the sequence of tasks in the quiz, I referrred to the 'Love Maths Project'.
 -   I took idea of creating Modal Box and its styling from https://www.w3schools.com/
 
 ### Media
