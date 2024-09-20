@@ -4,7 +4,7 @@ The Spellings Quiz, is an application mainly created for younger kids, so that t
 
 English is a world language. Most of the schools have this language as a first or second language. Sometimes kids find it easy to speak. But while writting they make lot of mistakes, due to their lagging spellings skills. 
 
-So the 1st purpose of this app, is learning spellings by an innovative method. When solving the quiz Kids won't feel, they are studying. 
+So the 1st purpose of this app, is learning spellings by an innovative method. When solving the quiz kids won't feel, they are studying. 
 
 Parents will see it as a better option to keep kids busy, instead of watching TV or playing games.
 
@@ -15,7 +15,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 ## Features
 -   Header
     -   Header at the top of the page, simply consists of a logo and a heading.
-    -   The 'abc' logo gives idea that its realted to alphabets.
+    -   The 'abc' logo gives idea that its related to alphabets.
     -   The heading "Spellings Quiz" clearly states what this application is about.
 
         ![Image of the header with a heading and scorebord](/assets/images/header-spellings-quiz.png)
@@ -70,7 +70,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 
 ### Features left to implement
 
--   In the future I would like to add a timer for the quiz. User should answer each question within some fixed number of seconds.When the given time is over next question will appear automatocally.
+-   In the future I would like to add a timer for the quiz. User should answer each question within some fixed number of seconds. When the given time is over next question will appear automatically.
 -   It would be also a nice idea to create login-id for the user. We can save the score for each profile. In this way we could track user's progress when he plays the quiz each time.
 
 ## Testing
@@ -105,7 +105,7 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
     -   I tested that all the 4 quiz types are working correctly. This includes loading correct images randomly, spellings getting correctly verified and scores getting updated after each submit event.
     -   I tested that the 'backspace', 'Submit' and 'Try Later' buttons are working correctly.
     -   I tested that at the end of each quiz, final score and a message is displayed.
-    -   I tested that when a quiz is not yet selected, clicking on 'alphabet' buttons, 'Submit' button or 'Try Later' button has no effect and a warning is displayed saying 'Please select a quiz'
+    -   I tested that when a quiz is not yet selected, clicking on 'alphabet' buttons, 'Submit' button or 'Try Later' button has no effect and a warning is displayed saying 'Please select a quiz'.
     -   I tested that hovering effect is working on all the buttons.
 
 ## Bugs
@@ -155,6 +155,6 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 
 -  The 'abc-block' image used as 'Favicon' in the title of the page as well as 'logo' in the heading was taken from [flaticon] ("https://www.flaticon.com/free-icons/coexistence")
 -  The icon on the button 'Backspace' was taken from [Font-awesome](https://fontawesome.com/)
--  All the images used in the Animals, Birds and Fruits quiz and also the smily icon were taken from [flaticon](https://www.flaticon.com/)
+-  All the images used in the 'Animals', 'Birds' and 'Fruits' quiz and also the 'smily icon' were taken from [flaticon](https://www.flaticon.com/)
 
 
