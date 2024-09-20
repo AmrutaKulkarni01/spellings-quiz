@@ -92,8 +92,9 @@
                 <h3>What's my spelling???
                     <img class="logo" src="assets/images/smiley.png" alt="smily-logo">
                 </h3>
-                <input type="text" id="spelling" readonly>
-                <button id="backspace"><i class="fa-solid fa-delete-left"></i></button>
+                <label id="text-box-label">Spelling:</label>
+                <input type="text" id="spelling" aria-labelledby="text-box-label" readonly>
+                <button id="backspace" aria-label="backspace"><i class="fa-solid fa-delete-left"></i></button>
                 <button id="submit">Submit</button>
                 <button id="next">Try Later</button>
                 <div id="validationMessage"></div>

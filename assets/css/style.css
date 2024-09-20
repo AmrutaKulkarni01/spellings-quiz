@@ -154,6 +154,11 @@ body {
     width: 7rem;
 }
 
+#text-box-label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 #backspace,
 #submit,
 #next {
