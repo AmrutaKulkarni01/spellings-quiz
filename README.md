@@ -145,6 +145,11 @@ Built to use on the go, on the mobile phone, on a tablet or a computer, it is al
 -   Open the IDE of your choice and and paste the copied git url into the IDE terminal
 -   The project is now created as a local clone
 
+## Wireframe
+-   The Wireframe that I drew as a template is pretty straight forward. It shows the basic planned structure of my quiz page. It should look almost the same on all screen sizes:
+    
+![Image of the wireframe spellings-quiz](/assets/images/wireframe.png)
+
 ## Credits
 -   A special heartfelt thanks to my Mentor, Spencer Barriball, for all the support he provided and for answering all my questions. With his help I could surely bring my project to the next level.
 
