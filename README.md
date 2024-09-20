@@ -8,6 +8,8 @@ So the 1st purpose of this app, is learning spellings by an innovative method. W
 
 Parents will see it as a better option to keep kids busy, instead of watching TV or playing games.
 
+Currrently the app includes 4 types of quiz. But it could be easily expanded to include more topics and more spellings.
+
 Built to use on the go, on the mobile phone, on a tablet or a computer, it is also a nice online platform for adults, who want to learn english language.
 
 ![Image of spellings-quiz app on different screen sizes](/assets/images/responsive.png)
